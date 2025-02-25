@@ -1,40 +1,40 @@
-def get_a_good_number():
+def get_a_valid_number():
     """
-    Yo, this thing gets a number from the user.
+    This asks the user for a number.
     It wants a number that's not negative.
     """
     while True:
         try:
-            user_input = input("Enter a non-negative integer: ")
-            number = int(user_input)
-            if number >= 0:
-                return number
+            input_from_user = input("Enter a non-negative integer: ")
+            the_number = int(input_from_user)
+            if the_number >= 0:
+                return the_number
             else:
-                print("Hey, that's negative! Try again.")
+                print("That's negative! Try again.")
         except ValueError:
-            print("That ain't a number, dude. Try again.")
+            print("That's not a number. Try again.")
 
-def do_the_factorial_thing(n):
+def calculate_the_factorial(input_number):
     """
-    This bit does the factorial stuff.
-    Like, multiplies all the numbers.
+    This calculates the factorial.
+    Multiplies all the numbers.
     """
-    if n == 0:
+    if input_number == 0:
         return 1
     else:
-        result = 1
-        for i in range(1, n + 1):
-            result = result * i
-        return result
+        result_of_calculation = 1
+        for current_number in range(1, input_number + 1):
+            result_of_calculation *= current_number
+        return result_of_calculation
 
-def run_the_whole_show():
+def run_the_program():
     """
-    This is where it all goes down.
-    Gets the number, does the factorial, tells the user.
+    This is where everything starts.
+    Gets the number, calculates, and prints.
     """
-    the_number = get_a_good_number()
-    factorial_result = do_the_factorial_thing(the_number)
-    print(f"The factorial of {the_number} is: {factorial_result}")
+    number_to_use = get_a_valid_number()
+    factorial_result = calculate_the_factorial(number_to_use)
+    print(f"The factorial of {number_to_use} is: {factorial_result}")
 
 if __name__ == "__main__":
-    run_the_whole_show()
+    run_the_program()
