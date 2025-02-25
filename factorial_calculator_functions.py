@@ -1,31 +1,30 @@
-def get_user_number():
-    """Gets a non-negative integer from the user."""
+def get_number():
+    """Get number."""
     while True:
         try:
-            input_string = input("Enter a non-negative integer: ")
-            user_number = int(input_string)
-            if user_number >= 0:
-                return user_number
+            num = int(input("Enter a non-negative integer: "))
+            if num >= 0:
+                return num
             else:
-                print("Negative number. Try again.")
+                print("Negative.")
         except ValueError:
-            print("Invalid input. Try again.")
+            print("Invalid.")
 
-def calculate_factorial(input_number):
-    """Calculates the factorial of the input number."""
-    factorial_result = 1
-    if input_number == 0:
-        return factorial_result
+def factorial(n):
+    """Factorial."""
+    result = 1
+    if n == 0:
+        return result
     else:
-        for i in range(1, input_number + 1):
-            factorial_result *= i
-        return factorial_result
+        for i in range(1, n + 1):
+            result *= i
+        return result
 
-def run_program():
-    """Runs the factorial calculation program."""
-    number_to_calculate = get_user_number()
-    final_result = calculate_factorial(number_to_calculate)
-    print(f"The factorial of {number_to_calculate} is: {final_result}")
+def main():
+    """Main."""
+    number = get_number()
+    fact = factorial(number)
+    print(f"The factorial of {number} is: {fact}")
 
 if __name__ == "__main__":
-    run_program()
+    main()
