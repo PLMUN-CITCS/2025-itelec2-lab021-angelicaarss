@@ -1,10 +1,9 @@
-def get_number():
+def get_non_negative_integer():
     """
-    Get a non-negative integer from the user.
+    Obtains a non-negative integer input from the user.
 
-    Prompts the user to enter a non-negative integer and returns it.
-    Ensures that the input is a valid non-negative integer.
-    :return: A non-negative integer entered by the user.
+    Prompts the user to enter a non-negative integer and ensures the input is valid.
+    Returns the validated non-negative integer.
     """
     while True:
         try:
@@ -16,14 +15,15 @@ def get_number():
         except ValueError:
             print("Invalid input. Please enter a non-negative integer.")
 
-def factorial(n):
+def calculate_factorial(n):
     """
-    Calculate the factorial of a number.
+    Calculates the factorial of a given non-negative integer.
 
-    Computes the factorial of the given non-negative integer.
     :param n: A non-negative integer.
     :return: The factorial of the given integer.
     """
+    if n == 0:
+        return 1
     result = 1
     for i in range(1, n + 1):
         result *= i
@@ -33,13 +33,13 @@ def main():
     """
     Main function to calculate the factorial of a user-provided number.
 
-    Calls get_number() to get a non-negative integer from the user.
-    Calls factorial() to compute the factorial of the provided number.
+    Calls get_non_negative_integer() to get a valid input number.
+    Calls calculate_factorial() to compute the factorial of the provided number.
     Prints the factorial of the provided number.
     """
-    number = get_number()
-    fact = factorial(number)
-    print(f"The factorial of {number} is: {fact}")
+    number = get_non_negative_integer()
+    factorial_result = calculate_factorial(number)
+    print(f"The factorial of {number} is: {factorial_result}")
 
 if __name__ == "__main__":
     main()
