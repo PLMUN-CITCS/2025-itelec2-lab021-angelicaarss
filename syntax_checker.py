@@ -1,1 +1,1 @@
-```python import ast def check_syntax(file_path): with open(file_path, "r") as file: source = file.read() try: ast.parse(source) print("No syntax errors found.") except SyntaxError as e: print(f"Syntax error in {file_path}: {e}") if __name__ == "__main__": check_syntax("factorial_calculator_functions.py") ```
+
