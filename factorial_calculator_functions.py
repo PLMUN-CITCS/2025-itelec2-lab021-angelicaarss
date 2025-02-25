@@ -1,40 +1,31 @@
-def get_a_valid_number():
-    """
-    This asks the user for a number.
-    It wants a number that's not negative.
-    """
+def get_user_number():
+    """Gets a non-negative integer from the user."""
     while True:
         try:
-            input_from_user = input("Enter a non-negative integer: ")
-            the_number = int(input_from_user)
-            if the_number >= 0:
-                return the_number
+            input_string = input("Enter a non-negative integer: ")
+            user_number = int(input_string)
+            if user_number >= 0:
+                return user_number
             else:
-                print("That's negative! Try again.")
+                print("Negative number. Try again.")
         except ValueError:
-            print("That's not a number. Try again.")
+            print("Invalid input. Try again.")
 
-def calculate_the_factorial(input_number):
-    """
-    This calculates the factorial.
-    Multiplies all the numbers.
-    """
+def calculate_factorial(input_number):
+    """Calculates the factorial of the input number."""
+    factorial_result = 1
     if input_number == 0:
-        return 1
+        return factorial_result
     else:
-        result_of_calculation = 1
-        for current_number in range(1, input_number + 1):
-            result_of_calculation *= current_number
-        return result_of_calculation
+        for i in range(1, input_number + 1):
+            factorial_result *= i
+        return factorial_result
 
-def run_the_program():
-    """
-    This is where everything starts.
-    Gets the number, calculates, and prints.
-    """
-    number_to_use = get_a_valid_number()
-    factorial_result = calculate_the_factorial(number_to_use)
-    print(f"The factorial of {number_to_use} is: {factorial_result}")
+def run_program():
+    """Runs the factorial calculation program."""
+    number_to_calculate = get_user_number()
+    final_result = calculate_factorial(number_to_calculate)
+    print(f"The factorial of {number_to_calculate} is: {final_result}")
 
 if __name__ == "__main__":
-    run_the_program()
+    run_program()
