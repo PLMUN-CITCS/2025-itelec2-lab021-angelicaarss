@@ -1,5 +1,5 @@
 """
-This module contains functions to calculate factorials and handle user input.
+A module for calculating factorials and validating user input.
 """
 
 def get_non_negative_integer() -> int:
