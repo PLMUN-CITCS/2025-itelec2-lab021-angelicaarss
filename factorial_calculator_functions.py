@@ -1,5 +1,5 @@
 """
-A module that calculates factorials and handles user input.
+This module contains functions to calculate factorials and handle user input.
 """
 
 def get_non_negative_integer() -> int:
@@ -25,8 +25,5 @@ def calculate_factorial(n: int) -> int:
     return result
 
 if __name__ == "__main__":
-    """
-    Main entry point for the program.
-    """
     number = get_non_negative_integer()
     print(f"The factorial of {number} is: {calculate_factorial(number)}")
