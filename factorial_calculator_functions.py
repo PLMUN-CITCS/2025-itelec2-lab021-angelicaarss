@@ -11,11 +11,11 @@ def get_non_negative_integer() -> int:
     while True:
         try:
             user_input = input("Enter a non-negative integer: ")
-            number = int(user_input)
-            if number < 0:
+            input_number = int(user_input) #Changed variable name to remove warning.
+            if input_number < 0:
                 print("Error: Please enter a non-negative integer.")
             else:
-                return number
+                return input_number
         except ValueError:
             if user_input.strip() == "":
                 print("Error: Input cannot be empty. Please enter an integer.")
