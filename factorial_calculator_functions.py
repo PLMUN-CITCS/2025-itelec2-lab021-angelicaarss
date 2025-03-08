@@ -17,7 +17,7 @@ def get_non_negative_integer() -> int:
             else:
                 return number
         except ValueError:
-            if user_input.strip() == "": #handles an empty string.
+            if user_input.strip() == "":
                 print("Error: Input cannot be empty. Please enter an integer.")
             else:
                 print("Error: Invalid input. Please enter a valid integer.")
