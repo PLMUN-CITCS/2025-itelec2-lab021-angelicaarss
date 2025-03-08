@@ -1,1 +1,9 @@
-# Ensure there are no trailing newlines at the end of the file
+"""
+This module is a placeholder for syntax checking.
+"""
+
+def example_function():
+    """example function"""
+    pass
+
+# Ensure a newline at the end
